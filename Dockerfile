@@ -6,7 +6,7 @@ RUN apt-get install -y python3-pip python-dev build-essential
 
 ADD . /Altair
 
-WORKDIR /Altair
+WORKDIR /
 
 RUN pip install -r Altair/requirements.txt
 
