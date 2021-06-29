@@ -1,0 +1,12 @@
+version: '3.4'
+
+services:
+    gunicorn-flask:
+        build:
+          context: .
+          dockerfile: Dockerfile
+          network: host
+        volumes:
+          - .:/Altair 
+        ports:
+          - "8000:8000"

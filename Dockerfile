@@ -6,10 +6,8 @@ RUN apt-get install -y python3-pip python-dev build-essential
 
 ADD . /Altair
 
-WORKDIR /
+WORKDIR /Altair
 
-RUN pip install -r Altair/requirements.txt
+RUN pip install -r requirements.txt
 
-ENTRYPOINT ["gunicorn"]
-
-CMD ["Altair:app"]
+CMD ["gunicorn"  , "-b", "0.0.0.0:8000", "app:app"]
